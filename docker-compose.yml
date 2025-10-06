@@ -1,0 +1,34 @@
+services:
+  admin-api:
+    build: ./services/admin_api
+    ports: ["8000:8000"]
+    volumes:
+      - ./data:/app/data
+      - ./config.json:/app/config.json:ro
+    environment:
+      - DB_PATH=/app/data/orders.db
+      - CONFIG_PATH=/app/config.json
+    restart: unless-stopped
+
+  hl7-intake:
+    build: ./services/hl7_intake
+    ports: ["2575:2575"]
+    volumes:
+      - ./data:/app/data
+      - ./inbox:/app/inbox
+    environment:
+      - DB_PATH=/app/data/orders.db
+      - MLLP_PORT=2575
+    restart: unless-stopped
+
+  mwl-scp:
+    build: ./services/mwl_scp
+    ports: ["2762:2762"]
+    volumes:
+      - ./data:/app/data
+      - ./config.json:/app/config.json:ro
+    environment:
+      - DB_PATH=/app/data/orders.db
+      - CONFIG_PATH=/app/config.json
+      - MWL_PORT=2762
+    restart: unless-stopped

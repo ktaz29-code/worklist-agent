@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+.data/
+data/*
+!data/.gitkeep
+inbox/*
+!inbox/.gitkeep
+.idea/
+.vscode/
+dist/
+build/

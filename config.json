@@ -1,0 +1,21 @@
+{
+  "ae_policies": {
+    "CT01": {
+      "sites": [
+        "STAR"
+      ],
+      "departments": [
+        "CT"
+      ]
+    },
+    "MR01": {
+      "sites": [
+        "STAR",
+        "BSIB"
+      ],
+      "departments": [
+        "MR"
+      ]
+    }
+  }
+}
