@@ -1,6 +1,5 @@
 using FellowOakDicom;
 using FellowOakDicom.Network;
-using FellowOakDicom.Network.Client;
 using System.Text;
 
 namespace MwlBroker.Service;
