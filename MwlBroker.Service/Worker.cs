@@ -33,6 +33,11 @@ public class Worker : BackgroundService
                 await Task.Delay(1000, stoppingToken);
             }
         }
+        catch (OperationCanceledException)
+        {
+            // Expected when service is stopping
+            _logger.LogInformation("Service stopping");
+        }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error in DICOM SCP service");
