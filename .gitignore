@@ -10,3 +10,11 @@ inbox/*
 .vscode/
 dist/
 build/
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+logs/
